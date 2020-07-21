@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>T-shirt configurator</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-wrapper">
+          <img class="logo" src="/coon.png" alt="logo" />
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="preview">
+        <h2>Customize your t-shirt</h2>
+        <div class="shirt-wrapper">
+          <div class="southpark-wrapper">
+            <img class="stan" src="/stan.png" alt="stan" />
+            <img class="eric" src="/eric.png" alt="eric" />
+            <img class="kenny" src="/kenny.png" alt="kenny" />
+          </div>
+
+          <div class="shape-wrapper">
+            <!-- triangolo -->
+            <svg
+              class="triangle"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 94 82"
+            >
+              <path id="triangolo" d="M47,0,94,82H0Z" fill="#c9c9c9" />
+            </svg>
+            <!-- cerchio -->
+            <svg
+              class="circle"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 94 94"
+            >
+              <circle id="cerchio" cx="47" cy="47" r="47" fill="#c9c9c9" />
+            </svg>
+            <!-- quadrato -->
+            <svg
+              class="square"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 94 94"
+            >
+              <path
+                id="quadrato"
+                data-name="Polygon 2"
+                d="M47,0,94,47,47,94,0,47Z"
+                fill="#c9c9c9"
+              />
+            </svg>
+          </div>
+          <img class="shirt" src="/tshirt.svg" alt="t-shirt model" />
+        </div>
+        <div class="button" id="button-preview">
+          <a href="#">
+            <h4 class="btn">Buy it</h4>
+          </a>
+        </div>
+      </section>
+      <section class="configurator">
+        <h4>Picture</h4>
+        <div class="row-wrapper">
+          <div class="char-card">
+            <div class="char-wrapper">
+              <img class="char" src="/eric.png" alt="eric" />
+            </div>
+            <h5>eric</h5>
+          </div>
+          <div class="char-card1">
+            <div class="char-wrapper">
+              <img class="char" src="/kenny.png" alt="kenny" />
+            </div>
+            <h5>kenny</h5>
+          </div>
+          <div class="char-card2">
+            <div class="char-wrapper">
+              <img class="char" src="/stan.png" alt="stan" />
+            </div>
+            <h5>stan</h5>
+          </div>
+        </div>
+
+        <h4>Shape</h4>
+
+        <div class="row-wrapper">
+          <div class="shape-card">
+            <div class="char-wrapper">
+              <img class="char" src="/triangle.svg" alt="triangle" />
+            </div>
+            <h5>triangle</h5>
+          </div>
+          <div class="shape-card1">
+            <div class="char-wrapper">
+              <img class="char" src="/circle.svg" alt="circle" />
+            </div>
+            <h5>circle</h5>
+          </div>
+          <div class="shape-card2">
+            <div class="char-wrapper">
+              <img class="char" src="/square.svg" alt="square" />
+            </div>
+            <h5>square</h5>
+          </div>
+        </div>
+
+        <h4>Color</h4>
+
+        <div class="row-wrapper">
+          <div class="color-card">
+            <div class="char-wrapper">
+              <img class="char" src="/cyan.svg" alt="cyan" />
+            </div>
+            <h5>cyan</h5>
+          </div>
+          <div class="color-card1">
+            <div class="char-wrapper">
+              <img class="char" src="/red.svg" alt="red" />
+            </div>
+            <h5>red</h5>
+          </div>
+          <div class="color-card2">
+            <div class="char-wrapper">
+              <img class="char" src="/yellow.svg" alt="yellow" />
+            </div>
+            <h5>yellow</h5>
+          </div>
+        </div>
+        <div class="button" id="button-configurator">
+          <a href="#">
+            <h4 class="btn">Buy it</h4>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script>
+      function hero() {
+        var timeline = gsap.timeline({ duration: 10, repeat: 0 });
+        timeline.to(".eric", { scale: 2, duration: 0.5 }, 0);
+        timeline.fromTo(eric, 0.2, { rotation: 0 }, { rotation: 360 }, 0);
+        timeline.to(".eric", { scale: 1, duration: 0.8 }, 0.3);
+        timeline.to(".kenny", { scale: 2, duration: 0.5 }, 0);
+        timeline.fromTo(kenny, 0.2, { rotation: 0 }, { rotation: 360 }, 0);
+        timeline.to(".kenny", { scale: 1, duration: 0.8 }, 0.3);
+        timeline.to(".stan", { scale: 2, duration: 0.5 }, 0);
+        timeline.to(".stan", { scale: 1, duration: 0.8 }, 0.3);
+        timeline.fromTo(stan, 0.2, { rotation: 0 }, { rotation: 360 }, 0);
+      }
+
+      function shape() {
+        var tl = gsap.timeline({ duration: 10, repeat: 0 });
+
+        tl.to(".triangle", { scale: 0, duration: 0.1 }, 0);
+        tl.to(".triangle", { scale: 2, duration: 0.3 }, 0.1);
+        tl.to(".triangle", { scale: 1, duration: 0.5 }, 0.2);
+        tl.to(".circle", { scale: 0, duration: 0.1 }, 0);
+        tl.to(".circle", { scale: 2, duration: 0.3 }, 0.1);
+        tl.to(".circle", { scale: 1, duration: 0.5 }, 0.2);
+        tl.to(".square", { scale: 0, duration: 0.1 }, 0);
+        tl.to(".square", { scale: 2, duration: 0.3 }, 0.1);
+        tl.to(".square", { scale: 1, duration: 0.5 }, 0.2);
+      }
+      // Characters card selector
+      const charCardE = document.querySelector(".char-card");
+      const charCardK = document.querySelector(".char-card1");
+      const charCardS = document.querySelector(".char-card2");
+
+      // Shapes card selector
+      const shapeCardT = document.querySelector(".shape-card");
+      const shapeCardC = document.querySelector(".shape-card1");
+      const shapeCardS = document.querySelector(".shape-card2");
+
+      // Colors card selector
+      const colorCardC = document.querySelector(".color-card");
+      const colorCardR = document.querySelector(".color-card1");
+      const colorCardY = document.querySelector(".color-card2");
+
+      // colors shapes selector
+      const triangolo = document.querySelector("#triangolo");
+      const quadrato = document.querySelector("#quadrato");
+      const cerchio = document.querySelector("#cerchio");
+      // Preview char-shapes
+      const triangle = document.querySelector(".triangle");
+      const circle = document.querySelector(".circle");
+      const square = document.querySelector(".square");
+      const eric = document.querySelector(".eric");
+      const kenny = document.querySelector(".kenny");
+      const stan = document.querySelector(".stan");
+
+      // CHARACTERS EVENTS
+
+      charCardE.addEventListener("click", function () {
+        eric.style.display = "inline";
+        kenny.style.display = "none";
+        stan.style.display = "none";
+
+        hero();
+      });
+
+      charCardK.addEventListener("click", function () {
+        eric.style.display = "none";
+        kenny.style.display = "inline";
+        stan.style.display = "none";
+
+        hero();
+      });
+      charCardS.addEventListener("click", function () {
+        eric.style.display = "none";
+        kenny.style.display = "none";
+        stan.style.display = "inline";
+
+        hero();
+      });
+
+      // SHAPES EVENTS
+
+      shapeCardT.addEventListener("click", function () {
+        triangle.style.display = "inline";
+        circle.style.display = "none";
+        square.style.display = "none";
+
+        shape();
+      });
+      shapeCardC.addEventListener("click", function () {
+        triangle.style.display = "none";
+        circle.style.display = "inline";
+        square.style.display = "none";
+
+        shape();
+      });
+      shapeCardS.addEventListener("click", function () {
+        triangle.style.display = "none";
+        circle.style.display = "none";
+        square.style.display = "inline";
+
+        shape();
+      });
+
+      // COLORS EVENTS
+      colorCardR.addEventListener("click", function () {
+        triangolo.style.fill = "#cd2626";
+        cerchio.style.fill = "#cd2626";
+        quadrato.style.fill = "#cd2626";
+      });
+      colorCardC.addEventListener("click", function () {
+        triangolo.style.fill = "#99e7ea";
+        cerchio.style.fill = "#99e7ea";
+        quadrato.style.fill = "#99e7ea";
+      });
+      colorCardY.addEventListener("click", function () {
+        triangolo.style.fill = "#f1be62";
+        cerchio.style.fill = "#f1be62";
+        quadrato.style.fill = "#f1be62";
+      });
+
+      // BACKGROUND CARD EVENTS FIRST ROW
+      charCardE.addEventListener("click", function () {
+        charCardE.style.backgroundColor = "lightgoldenrodyellow";
+        charCardK.style.backgroundColor = "white";
+        charCardS.style.backgroundColor = "white";
+      });
+      charCardK.addEventListener("click", function () {
+        charCardE.style.backgroundColor = "white";
+        charCardK.style.backgroundColor = "lightgoldenrodyellow";
+        charCardS.style.backgroundColor = "white";
+      });
+      charCardS.addEventListener("click", function () {
+        charCardE.style.backgroundColor = "white";
+        charCardK.style.backgroundColor = "white";
+        charCardS.style.backgroundColor = "lightgoldenrodyellow";
+      });
+      // BACKGROUND CARD EVENTS SECOND ROW
+      shapeCardT.addEventListener("click", function () {
+        shapeCardT.style.backgroundColor = "lightgoldenrodyellow";
+        shapeCardC.style.backgroundColor = "white";
+        shapeCardS.style.backgroundColor = "white";
+      });
+      shapeCardC.addEventListener("click", function () {
+        shapeCardT.style.backgroundColor = "white";
+        shapeCardC.style.backgroundColor = "lightgoldenrodyellow";
+        shapeCardS.style.backgroundColor = "white";
+      });
+      shapeCardS.addEventListener("click", function () {
+        shapeCardT.style.backgroundColor = "white";
+        shapeCardC.style.backgroundColor = "white";
+        shapeCardS.style.backgroundColor = "lightgoldenrodyellow";
+      });
+      // BACKGROUND CARD EVENTS THIRD ROW
+      colorCardC.addEventListener("click", function () {
+        colorCardC.style.backgroundColor = "lightgoldenrodyellow";
+        colorCardR.style.backgroundColor = "white";
+        colorCardY.style.backgroundColor = "white";
+      });
+      colorCardR.addEventListener("click", function () {
+        colorCardC.style.backgroundColor = "white";
+        colorCardR.style.backgroundColor = "lightgoldenrodyellow";
+        colorCardY.style.backgroundColor = "white";
+      });
+      colorCardY.addEventListener("click", function () {
+        colorCardC.style.backgroundColor = "white";
+        colorCardR.style.backgroundColor = "white";
+        colorCardY.style.backgroundColor = "lightgoldenrodyellow";
+      });
+    </script>
+  </body>
+</html>
