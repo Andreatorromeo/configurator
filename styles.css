@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SP";
+  src: url("south\ park.ttf");
+}
+a {
+  width: 100%;
+  height: 100;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  max-height: 80px;
+}
+nav {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  border: 1px solid lightpink;
+}
+
+.logo {
+  width: 50px;
+  font-family: SP;
+  margin: 2px 10px;
+}
+h2 {
+  font-family: SP;
+  font-size: 1.3em;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 80%;
+}
+.preview {
+  width: 50%;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  border-radius: 2%;
+  background-color: #f6f6f6;
+}
+
+.button {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: #252525;
+  width: 30%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#button-configurator {
+  display: none;
+}
+.btn {
+  color: white;
+  margin: 0;
+  margin-top: 6px;
+}
+
+.shirt-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shirt {
+  width: 100%;
+}
+.southpark-wrapper {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+}
+.kenny {
+  display: none;
+  width: 30%;
+}
+.stan {
+  display: none;
+  width: 30%;
+}
+
+.eric {
+  width: 30%;
+}
+
+.shape-wrapper {
+  position: absolute;
+  width: 200%;
+}
+.circle {
+  width: 20%;
+  display: none;
+}
+.square {
+  width: 20%;
+  display: none;
+}
+.triangle {
+  width: 20%;
+}
+#triangolo {
+  fill: rgb(166, 231, 231);
+}
+#cerchio {
+  fill: rgb(166, 231, 231);
+}
+#quadrato {
+  fill: rgb(166, 231, 231);
+}
+
+.configurator {
+  width: 50%;
+  height: 100vh;
+  /* border: solid 1px cyan; */
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  position: relative;
+}
+
+.row-wrapper {
+  width: 100%;
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.char-card,
+.char-card1,
+.char-card2 {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.shape-card,
+.shape-card1,
+.shape-card2 {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.color-card,
+.color-card1,
+.color-card2 {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.char-wrapper {
+  /* border: 1px solid green; */
+  width: 60%;
+  height: 100%;
+}
+.char {
+  margin-top: 15px;
+  width: 100%;
+}
+.char-card {
+  background-color: lightgoldenrodyellow;
+}
+.shape-card {
+  background-color: lightgoldenrodyellow;
+}
+.color-card {
+  background-color: lightgoldenrodyellow;
+}
+h4 {
+  font-family: SP;
+  font-size: 1.1em;
+  margin-left: 12px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+h5 {
+  font-family: SP;
+}
+
+@media screen and (max-width: 540px) {
+  body {
+    overflow: auto;
+  }
+  main {
+    flex-direction: column;
+  }
+  .preview {
+    width: 100%;
+  }
+  .shirt-wrapper {
+    margin-bottom: 50px;
+  }
+  .configurator {
+    width: 100%;
+  }
+  .row-wrapper {
+    margin-bottom: 0;
+  }
+  #button-configurator {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #button-preview {
+    display: none;
+  }
+  .char-card,
+  .char-card1,
+  .char-card2,
+  .shape-card,
+  .shape-card1,
+  .shape-card2,
+  .color-card,
+  .color-card1,
+  .color-card2 {
+    width: 18%;
+  }
+}
