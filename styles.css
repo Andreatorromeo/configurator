@@ -129,6 +129,7 @@ main {
 .configurator {
   width: 50%;
   height: 100vh;
+  overflow: scroll;
   /* border: solid 1px cyan; */
   justify-content: center;
   align-items: left;
